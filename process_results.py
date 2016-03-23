@@ -5,7 +5,7 @@ data = f.read()
 
 tests = json.loads(data)
 
-details = open('test_request_details.md', 'w')
+details = open('generated_test_analysis.md', 'w')
 for k, v in tests.iteritems():
     test_name = k.split('[')[0]
     
