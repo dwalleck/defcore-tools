@@ -5,7 +5,7 @@ data = f.read()
 
 tests = json.loads(data)
 
-details = open('generated_test_analysis.md', 'w')
+details = open('generated_test_analysis.txt', 'w')
 for k, v in tests.iteritems():
     test_name = k.split('[')[0]
     
@@ -13,5 +13,5 @@ for k, v in tests.iteritems():
     
     if v:
         for item in v:
-            details.write('- ' + item.get('verb') + ' request for ' + item.get('service') + ' to ' + item.get('url') + '\n')
+            details.write('\t- ' + item.get('verb') + ' request for ' + item.get('service') + ' to ' + item.get('url') + '\n')
     details.write('\n')
